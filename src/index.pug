@@ -7,4 +7,35 @@ append vars
 	//-
 
 block content
-	//-
+	- const skills = ['html5', 'saas', 'vanillajs', 'git', 'css3', 'less', 'angular', 'foundation', 'бэм', 'gulp', 'jquery', 'bootstrap']
+	- const bio = ['Евгения Осьмакова', '20.10.1989', 'Москва', 'evgeniya.osmakova@gmail.com']
+
+		.header
+			.photo
+				+svg("avatar")
+			.personal-data
+				each val in bio
+					.personal-data__item
+						|#{val}
+				+svg("approved")
+
+		.main
+			.main__header
+				|Навыки
+			.main__skills
+				each val in skills
+					+input(val)
+
+		.footer
+			.indicator
+				.indicator__value
+					+svg("indicator")
+				.indicator__arrow
+					+svg("arrow")
+			.digit-animation
+				.digit-animation__header
+					|Мой уровень владения Java Script
+				.digit-animation__digit#digit
+
+append scripts
+	script(src="/js/main.js")

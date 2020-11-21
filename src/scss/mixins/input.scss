@@ -1,0 +1,61 @@
+.skill {
+	position: relative;
+	display: block;
+	margin-bottom: 3px;
+	padding-left: 25px;
+	font-family: $font-family-roboto;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $color-dark-gray;
+	cursor: pointer;
+	user-select: none;
+
+	&__checkbox {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	&__checkmark {
+		position: absolute;
+		left: 0;
+		top: 0;
+		border-radius: 5px;
+		width: 19px;
+		height: 19px;
+		background-color: $color-light-gray;
+
+		&::after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+	}
+
+	&:hover .skill__checkmark {
+		background-color: $color-gray;
+	}
+}
+
+.skill input:checked ~ .skill__checkmark {
+	background-color: $color-blue;
+}
+
+.skill input:checked ~ .skill__checkmark::after {
+	display: block;
+}
+
+.skill .skill__checkmark::after {
+	left: 7px;
+	top: 2px;
+	border: solid $color-white;
+	border-width: 0 2px 2px 0;
+	width: 6px;
+	height: 12px;
+	transform: rotate(45deg);
+}
