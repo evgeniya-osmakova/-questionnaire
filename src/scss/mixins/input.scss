@@ -39,11 +39,13 @@
 
 	&:hover .skill__checkmark {
 		background-color: $color-gray;
+		transition: background-color 1s ease-out;
 	}
 }
 
 .skill input:checked ~ .skill__checkmark {
 	background-color: $color-blue;
+	transition: background-color 1s ease-out;
 }
 
 .skill input:checked ~ .skill__checkmark::after {
